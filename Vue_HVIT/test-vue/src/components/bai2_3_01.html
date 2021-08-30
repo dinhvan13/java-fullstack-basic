@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 3.1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="bai3">
+      <h1 style="color: blue; text-align: center">{{message}}</h1>
+      <h1 style="color: red; text-align: center">{{messagechanged}}</h1>
+      <div class="d-flex justify-center">
+        <button outlined color="green" @click="changedBLock1()">Click Here!</button>
+      </div>
+    </div>
+
+    <script>
+      var vue = new Vue({
+        el: "#bai3",
+        data: () => ({
+          message: "Instance 2",
+          messagechanged: "",
+        }),
+        created: function () {
+          this.show();
+        },
+        methods: {
+          show: function () {
+            alert(this.message);
+          },
+          changedBLock1() {
+            this.messagechanged = "toi dang hoc lap trinh vue";
+          },
+        },
+
+        watch: {
+          messagechanged: function (val) {
+            alert(val);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

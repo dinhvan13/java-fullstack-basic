@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai 2.1</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  </head>
+  <body style="text-align: center">
+    <div id="app1">
+      <h1 v-once style="color: blue; text-align: center">{{message}}</h1>
+      <h1>{{message}}</h1>
+      <button @click="changedClick()">CLick me!</button>
+    </div>
+
+    <div id="app2">
+      <h1 v-once style="color: red; text-align: center">{{message}}</h1>
+      <h1>{{message}}</h1>
+      <button @click="changedClick()">Click me!</button>
+    </div>
+    <script>
+      var vue1 = new Vue({
+        el: "#app1",
+        data: () => ({
+          message: "Instance 1",
+        }),
+        methods: {
+          changedClick() {
+            vue2.$data.message = "Message cua instance 1 duoc thay doi thanh message cua instance 2";
+          },
+        },
+      });
+
+      var vue2 = new Vue({
+        el: "#app2",
+        data: () => ({
+          message: "Instance 2",
+        }),
+        methods: {
+          changedClick() {
+            vue1.$data.message = "Message cua instance 2 duoc thay doi thanh message cua instance 1";
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

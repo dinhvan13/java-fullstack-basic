@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Computed</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <img alt="Vue logo" src="../assets/logo.png" />
+      <p>{{ upperMessage }}</p>
+      <button @click="click">Click</button>
+      <p>{{check}}</p>
+      <button @click="showMessage">Click me</button>
+    </div>
+    <script>
+      var vue = new Vue({
+        el: "#app",
+        data: () => ({
+          message: "Cảm ơn bạn đã theo dõi bài viết này!",
+          check: false,
+        }),
+        watch:{
+            check(){
+                alert("xinchao");
+            }
+        },
+        methods: {
+          showMessage() {
+            this.message = "Message đã thay đổi!";
+          },
+          click(){
+              this.check = !this.check;
+          }
+        },
+      });
+    </script>
+  </body>
+</html>
