@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form dang ky ho so khach hang</title>
+    <style type="text/css">
+      body {
+        background-color: bisque;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 12px;
+      }
+      h1 {
+        text-align: center;
+        font-size: 30px;
+        font-weight: bold;
+        background-color: aliceblue;
+        padding: 5px;
+      }
+      table {
+        border-spacing: 5px;
+        width: 100%;
+      }
+      table,
+      th,
+      td {
+        border: 2px solid black;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 15px;
+      }
+      th {
+        text-align: center;
+      }
+    </style>
+
+    <script>
+      function dangKy() {
+        var kq = document.getElementById("kq");
+        var name = document.getElementById("name").value;
+        var pass = document.getElementById("pass").value;
+        var user = document.getElementById("user").value;
+        // var genders = [];
+        // for(var g of gender){
+        //   if(g.checked){
+        //     genders.push[g.value];
+        //   }
+        // }
+        if (document.getElementById("gender1").checked) {
+          var gender = document.getElementById("gender1").value;
+        }
+        if (document.getElementById("gender2").checked) {
+          var gender = document.getElementById("gender2").value;
+        }
+
+        var date = document.getElementById("date").value;
+        var city = document.getElementById("thanhpho").options;
+        var selected = [];
+        for (var c of city) {
+          if (c.selected) {
+            selected.push(c.value);
+          }
+        }
+        var tel = document.getElementById("phone").value;
+        var email = document.getElementById("email").value;
+        if (name != "" && pass != null && user != "" && gender != "" && date != null && selected.length != 0 && tel != null) {
+          var data =
+            '<ul id="menu">' +
+            "<li>Họ tên khách hàng:<i>" +
+            name +
+            "</i></li>" +
+            "<li>Tên đăng nhập:<i>" +
+            user +
+            "</i></li>" +
+            "<li>Mật khẩu:<i>" +
+            pass +
+            "</i></li>" +
+            "<li>Ngày sinh:<i>" +
+            date +
+            "</i></li>" +
+            "<li>Gioi tính:<i>" +
+            gender +
+            "</i></li>" +
+            "<li>Email:<i></i>" +
+            email +
+            "</li>" +
+            "<li>Địa chỉ:<i>" +
+            selected +
+            "</i></li>" +
+            "<li>SĐT:<i>" +
+            tel +
+            "</i></li>" +
+            "</ul>";
+          kq.innerHTML = data;
+        } else {
+          alert("dang ky khong thanh cong!");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Hồ sơ đăng ký</h1>
+    <form action="">
+      <table width="100%">
+        <tr>
+          <th colspan="2">Thông tin đăng nhập</th>
+          <th colspan="2">Hồ sơ khách hàng</th>
+        </tr>
+        <tr>
+          <td>Tên đăng nhập</td>
+          <td><input type="text" name="name" id="name" /></td>
+          <td colspan="2"></td>
+        </tr>
+        <tr>
+          <td>Mật khẩu</td>
+          <td><input type="password" name="pass" id="pass" /></td>
+          <td colspan="2"></td>
+        </tr>
+        <tr>
+          <td>Nhập lại mật khẩu</td>
+          <td><input type="password" name="password" id="resetpass" /></td>
+          <td colspan="2"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <table width="100%">
+              <tr>
+                <th colspan="2">Thông tin cá nhân</th>
+              </tr>
+              <tr>
+                <td>Họ tên khách hàng</td>
+                <td><input type="text" name="user" id="user" /></td>
+              </tr>
+              <tr>
+                <td>Ngày sinh</td>
+                <td><input type="date" name="date" id="date" /></td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td><input type="email" name="email" id="email" /></td>
+              </tr>
+              <tr>
+                <td>Gioi tính</td>
+                <td>Nam<input type="radio" id="gender1" name="gender" value="nam" checked /> Nữ<input type="radio" id="gender2" name="gender" value="nu" /></td>
+              </tr>
+              <tr>
+                <td>Địa chỉ</td>
+                <td>
+                  <select name="thanhpho" id="thanhpho" size="4" multiple>
+                    <option value="">Chọn thành phố</option>
+                    <option value="hanoi">Hà nội</option>
+                    <option value="bacninh">Bắc Ninh</option>
+                    <option value="hanam">Hà Nam</option>
+                    <option value="khac">Tỉnh thành khác</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Số điện thoại</td>
+                <td><input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" /></td>
+              </tr>
+              <tr>
+                <td colspan="2"><input type="button" name="dangky" id="dangky" value="Register" onclick="dangKy()" /></td>
+              </tr>
+            </table>
+          </td>
+          <td colspan="2">
+            <div id="kq"><label for="kq" id="kq"> </label></div>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

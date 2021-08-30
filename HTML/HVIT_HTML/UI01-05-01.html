@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout don gian</title>
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        width: 100%;
+        background-color: bisque;
+      }
+      h2 {
+        font-size: 20px;
+        font-weight: bold;
+        background-color: white;
+        padding: 15px;
+        color: aquamarine;
+        width: 500px;
+      }
+      #wrap {
+        width: 1000px;
+        height: 1000px;
+        /* padding-bottom: 20px; */
+        margin-bottom: 20px;
+      }
+      #navbar > a {
+        text-decoration: none;
+        font-size: 15px;
+        float: left;
+        padding: 20px;
+        color: aliceblue;
+      }
+      #navbar > a:hover {
+        background-color: azure;
+        color: blue;
+      }
+      #navbar a.navbar-last {
+        float: right;
+        margin-right: 100px;
+      }
+      #content {
+        margin: 0px auto;
+        float: left;
+        width: 70%;
+        display: block;
+        padding-left: 20px;
+      }
+      #sidebar {
+        width: 30%;
+        display: block;
+        float: right;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      #footer {
+        clear: both;
+        display: block;
+        text-align: center;
+        /* margin-top: 40px; */
+        padding: 10px;
+        background-color: beige;
+      }
+      #footer > a {
+        padding-left: 10px;
+        text-decoration: none;
+        color: aquamarine;
+      }
+      #footer > a:hover {
+        text-decoration: underline;
+        color: rosybrown;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <a href="https://insight.hvitclan.vn/">Trang chủ</a>
+      <a href="https://insight.hvitclan.vn/">Gioi thiệu</a>
+      <a href="https://insight.hvitclan.vn/">Thông tin</a>
+      <a href="https://insight.hvitclan.vn/">Liên hệ</a>
+      <a href="https://insight.hvitclan.vn/" class="navbar-last">Đăng nhập</a>
+    </div>
+    <div id="wrap">
+      <div id="content">
+        <h2>Các video nổi bật</h2>
+        <iframe
+          width="650"
+          height="315"
+          src="https://www.youtube.com/embed/731v5OfI3Ek"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+        <h2>Các video lượt xem nhiều</h2>
+        <iframe
+          width="650"
+          height="315"
+          src="https://www.youtube.com/embed/731v5OfI3Ek"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <div id="sidebar">
+        <h2>Các video nổi bật tuần qua</h2>
+        <iframe
+          width="500"
+          height="250"
+          src="https://www.youtube.com/embed/731v5OfI3Ek"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+
+        <h2>Các video mới nhất</h2>
+        <iframe
+          width="500"
+          height="250"
+          src="https://www.youtube.com/embed/731v5OfI3Ek"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div id="footer">
+      <h4>© Copyright 2020, Sakura Cosmetics</h4>
+      <br />
+      <a href="">Facebook</a>
+      <a href="">Zalo</a>
+    </div>
+  </body>
+</html>

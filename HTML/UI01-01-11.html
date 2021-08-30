@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phieu dang ky tham gia chuong trinh</title>
+    <style type="text/css">
+      table {
+        border: 1px solid black;
+      }
+      table,
+      tr,
+      td {
+        padding: 15px;
+        text-align: justify;
+      }
+      tr {
+        margin: 5px;
+      }
+    </style>
+
+    <script>
+      function dangKy() {
+        var kq = document.getElementById("kq");
+        var name = document.getElementById("name").value;
+        var gender = document.getElementById("ok");
+        var job = document.getElementById("jobs");
+        var product = document.getElementById("products").options;
+        var selected = [];
+        for (var v of product) {
+          if (v.selected) {
+            selected.push(v.value);
+          }
+        }
+        if (name != "" && job.value != "" && selected.length != 0) {
+          kq.innerText = "Ban da dang ky thanh cong";
+          console.log(name);
+          console.log(gender.value);
+          console.log(job.value);
+          console.log(selected);
+        } else {
+          alert("Ban da dang ky khong thanh cong!");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <form action="" id="formdangky" name =>
+      <table width="100%">
+        <tr>
+          <td>Name</td>
+          <td><input type="text" id="name" /></td>
+        </tr>
+        <tr>
+          <td>Gioi tinh</td>
+          <td>Nu<input type="radio" name="gender" value="nu" id="ok" checked="checked" /></td>
+          <td>Nam<input type="radio" name="gender" value="nam" id="ok" /></td>
+        </tr>
+        <tr>
+          <td>Nghe nghiep</td>
+          <td>
+            <select name="jobs" id="jobs">
+              <option value="">Chon nghe nghiep</option>
+              <option value="bacsi">Bac si</option>
+              <option value="kysu">Ky su</option>
+              <option value="giaosu">Giao su</option>
+              <option value="khac">Khac</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>San pham</td>
+          <td>
+            <select name="products" id="products" size="4" multiple>
+              <option value="banhmi">Banh mi</option>
+              <option value="keo">Keo</option>
+              <option value="sua">Sua</option>
+              <option value="giavi">Gia vi</option>
+              <option value="tuongot">Tuong ot</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="button" id="btnLogin" name="btnLogin" value="Register" onclick="dangKy()" /></td>
+        </tr>
+        <tr>
+          <td colspan="2"><label for="" id="kq" name="kq"></label></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

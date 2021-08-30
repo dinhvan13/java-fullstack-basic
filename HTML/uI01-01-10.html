@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dang nhap nguoi dung</title>
+    <style type="text/css">
+      table{
+          border: 1px solid black;
+      }
+      table,tr,td{
+          padding: 15px;
+          text-align: justify;
+      }
+      tr{
+          margin:5px;
+      }
+    </style>
+    <script >
+      function myLogin(){
+          var kq = document.getElementById("kq");
+          var name = document.getElementById("name").value;
+          kq.innerText = name;
+      }
+    </script>
+</head>
+<body>
+    <form action="">
+        <table width = 50%>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" id="password"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" id="resgiter" name="btnDangky" 
+                    value="Regiter" onclick="myLogin()"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><label for="" id="kq"></label></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
